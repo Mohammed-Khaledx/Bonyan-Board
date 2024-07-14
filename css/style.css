@@ -1,0 +1,128 @@
+/*** Start Global Roles */
+
+:root {
+  --main-color: #2196f3;
+  --alter-color: #1787e0;
+  --main-transition-duration: 1s;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  /* color: var(--main-color);   */
+  transition: var(--main-transition-duration);
+}
+
+.container:hover {
+  /* transform: scale(1.02) */
+}
+
+/** small **/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/** medium **/
+@media (min-width: 991px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/** large **/
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/*******************************************************************************/
+
+/** Start body */
+
+body {
+  background-color: lightsteelblue;
+
+  height: fit-content;
+}
+
+/** End body */
+
+/*******************************************************************************/
+
+/** Start title */
+.title {
+  text-align: center;
+
+  color: var(--main-color);
+}
+
+/** End body */
+
+/*******************************************************************************/
+
+/** Start the main content section */
+
+.content {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  background-color: gray;
+  transition: var(--main-transition-duration);
+}
+z
+.list {
+  text-align: center;
+}
+
+.item {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.item.over {
+  border-bottom: 3px dashed #ccc;
+}
+
+input {
+  display: block;
+  margin: 9px auto;
+  width: 80%;
+  padding: 2px;
+  /* width: 70%; */
+  border-radius: 4px;
+  border: none;
+}
+
+.delete {
+  position: absolute;
+  right: 33px;
+  top: 1px;
+  border-radius: 4px;
+  border: none;
+}
+
+.update {
+  position: absolute;
+  right: 55px;
+  top: 1px;
+  border-radius: 4px;
+  border: none;
+}
+
+.add {
+  margin: 20px auto;
+  display: block;
+  width: 70%;
+  border-radius: 4px;
+  border: none;
+}
+
+/** End the main content section */
+
+/*******************************************************************************/
