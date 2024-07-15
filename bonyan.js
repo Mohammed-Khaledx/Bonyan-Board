@@ -5,6 +5,8 @@ const upComingList = document.querySelectorAll(".up-coming");
 const inProgressList = document.querySelectorAll(".in-Progress");
 const finishedList = document.querySelectorAll(".finished-l");
 
+// empty();
+
 let taskCounter = {
   "up-Coming": 0,
   "in-Progress": 0,
@@ -15,6 +17,8 @@ let taskCounter = {
 let storedTasks = JSON.parse(localStorage.getItem("tasks"))
   ? JSON.parse(localStorage.getItem("tasks"))
   : [];
+
+
 console.log(storedTasks);
 let upcoming = storedTasks.filter((task) => task.parent === "up-Coming");
 // onStarting or on reloading the page the page we should load all tasks from local storage
@@ -69,6 +73,25 @@ function attachDragDrop() {
   });
 }
 
+// function empty() {
+//   let lists = document.querySelectorAll("h2");
+
+//   lists.forEach((list) => {
+//     // item.addEventListener("dragstart", handleDragStart);
+//     // item.addEventListener("dragover", handleDragOver);
+//     list.addEventListener("dragenter", handleEmptyDragEnter);
+//     list.addEventListener("dragleave", handleEmptyDragLeave);
+//     list.addEventListener("dragend", (e) => {
+//       handleDragEnd(e.target);
+//       list.forEach((list) => {
+//         list.classList.remove("over");
+//       });
+//     });
+
+//     list.addEventListener("drop", handleDrop);
+//   });
+// }
+
 let draggedEl = document.createElement("div");
 function handleDragStart(e) {
   this.style.opacity = "0.3";
@@ -93,14 +116,21 @@ function handleDragLeave(e) {
   this.classList.remove("over");
 }
 
+// function handleEmptyDragEnter(e) {
+//   this.style.opacity = "0";
+// }
+
+// function handleEmptyDragLeave(e) {
+//   this.style.border = "1";
+// }
+
 function handleDrop(e) {
   e.stopPropagation();
-
+  console.log(draggedEl);
   if (draggedEl !== this || draggedEl !== undefined) {
     // draggedEl.innerHTML = this;
     let newColumn = this.parentNode.className.split(" ")[1];
     let droppedId = e.dataTransfer.getData("text/html");
-
     let secret = document.getElementById(droppedId);
     this.after(secret);
 
@@ -209,8 +239,11 @@ function updateItem(id) {
   updateBtns = document.querySelectorAll(".update");
   updateBtns.forEach((updateBtn) => {
     updateBtn.addEventListener("click", (e) => {
-      console.log('??');
-      updateTask(e.target.parentNode.id, e.target.parentNode.childNodes[0].value.trim());
+      console.log("??");
+      updateTask(
+        e.target.parentNode.id,
+        e.target.parentNode.childNodes[0].value.trim()
+      );
     });
   });
 }

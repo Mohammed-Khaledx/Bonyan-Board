@@ -1,9 +1,26 @@
 /*** Start Global Roles */
 
 :root {
-  --main-color: #2196f3;
-  --alter-color: #1787e0;
+  --main-color: #007acc;
+  --alter-color: #005fa3;
   --main-transition-duration: 1s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Consolas", "Courier New", monospace;
+}
+body {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .container {
@@ -11,12 +28,7 @@
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  /* color: var(--main-color);   */
   transition: var(--main-transition-duration);
-}
-
-.container:hover {
-  /* transform: scale(1.02) */
 }
 
 /** small **/
@@ -41,28 +53,15 @@
 }
 /*******************************************************************************/
 
-/** Start body */
 
-body {
-  background-color: lightsteelblue;
 
-  height: fit-content;
-}
-
-/** End body */
-
-/*******************************************************************************/
 
 /** Start title */
 .title {
   text-align: center;
-
+  font-size: 40px;
   color: var(--main-color);
 }
-
-/** End body */
-
-/*******************************************************************************/
 
 /** Start the main content section */
 
@@ -71,56 +70,78 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  background-color: gray;
-  transition: var(--main-transition-duration);
 }
-z
 .list {
+  margin: 20px;
   text-align: center;
 }
 
 .item {
-  margin: 0;
-  padding: 0;
-  position: relative;
+  margin: auto;
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
+  background: #252526;
+  margin: 5px 0;
+  transition: 0.2s ease-in-out;
 }
-
+.item:hover {
+  background-color: #2c2c2d;
+  border-color: #569cd6;
+}
 .item.over {
-  border-bottom: 3px dashed #ccc;
+  border-bottom: 6px solid #569cd6;
+  border-radius: 10px;
 }
 
 input {
-  display: block;
-  margin: 9px auto;
-  width: 80%;
-  padding: 2px;
-  /* width: 70%; */
-  border-radius: 4px;
+  width: calc(100% - 120px);
+  padding: 15px 20px;
+  border-radius: 5px;
+  background: #252526;
+  color: white;
+  font-size: 16px;
   border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+  outline: none;
 }
 
 .delete {
-  position: absolute;
-  right: 33px;
-  top: 1px;
-  border-radius: 4px;
-  border: none;
+  padding: 8px 16px;
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background: #252526;
+  color: #d4d4d4;
 }
 
 .update {
-  position: absolute;
-  right: 55px;
-  top: 1px;
-  border-radius: 4px;
-  border: none;
+  padding: 8px 16px;
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #252526;
+  color: #d4d4d4;
+  transition: all 0.2s ease-in-out;
 }
 
 .add {
-  margin: 20px auto;
-  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
   width: 70%;
-  border-radius: 4px;
+  border-radius: 5px;
   border: none;
+  background: var(--main-color);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.add:hover {
+  background-color: var(--alter-color);
 }
 
 /** End the main content section */
